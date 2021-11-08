@@ -2,8 +2,8 @@ entity Mux is
 generic(N:natural:=2;
 	tmux:time:=3 ns);
 port(sel:bit;
-	A,B:bit_vector(1 to N);
-	V:out bit_vector(1 to N));
+	A,B:bit_vector(N downto 1);
+	V:out bit_vector(N downto 1));
 end Mux;
 
 architecture beh of Mux is
@@ -22,15 +22,15 @@ entity Registre is
 generic(N:natural:=2;
 	tco:time:=2 ns);
 port(H:bit;
-	V:bit_vector(1 to N);
-	R:out bit_vector(1 to N));
+	V:bit_vector(N downto 1);
+	R:out bit_vector(N downto 1));
 end Registre;
 
 architecture beh of Registre is
 begin
 	process(H)
 	begin
-		if H='1' then 
+		if H'event and H='1' then 
 			R<=V after tco;
 		end if;
 	end process;
