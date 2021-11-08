@@ -42,8 +42,8 @@ end component;
 
 begin
 
-	muxx:Mux generic map(N=>N) port map(sel=>sel,A=>A,B=>B,V=>V);
-	reg:Registre generic map(N=>N) port map(H=>H,V=>V,R=>R);
+	mux1:Mux generic map(N=>N) port map(sel=>sel,A=>A,B=>B,V=>V);
+	reg1:Registre generic map(N=>N) port map(H=>H,V=>V,R=>R);
 
 end structure;
 -------------------------------------------------------------------

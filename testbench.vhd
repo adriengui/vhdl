@@ -16,9 +16,10 @@ signal A,B,R:bit_vector(4 downto 1);
 for UUT:registredouble use entity work.registredouble(structure);
 
 begin
-UUT: registredouble generic map(tco=>1 ns) port map(sel=>sel,H=>H,A=>A,B=>B,R=>R);
-A<="1011";
-B<="0110";
-sel<='1' after 55 ns, '0' after 70 ns;
-H<=not H after 20 ns;
+	UUT: registredouble generic map(tco=>2 ns) port map(sel=>sel,H=>H,A=>A,B=>B,R=>R);
+
+	H<=not H after 20 ns;
+	sel<='1' after 58 ns, '0' after 90 ns, '1' after 190 ns, '0' after 275 ns;
+	A<="1011", "0010" after 150 ns;
+	B<="0110", "1100" after 200 ns;
 end bench;
