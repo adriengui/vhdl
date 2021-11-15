@@ -16,7 +16,7 @@ begin
 
 	clk<=not clk after 10 ns; -- On décrit un scénario permettant de 
 	-- tester à peu près toutes les possibilités du système
-	rst<='1', '0' after 235 ns, '1' after 245 ns;
-	E<='1' after 35 ns;
-	S<='1' after 155 ns;
+	rst<='1';
+	E<='1' after 32 ns, '0' after 72 ns, '1' after 112 ns;
+	S<='1' after 152 ns;
 end bench;
