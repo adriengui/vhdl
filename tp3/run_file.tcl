@@ -25,5 +25,5 @@ add wave -noupdate -radix hexadecimal -radixshowbase 0 sim:/test/UUT/a
 add wave -noupdate -radix hexadecimal -radixshowbase 0 sim:/test/UUT/i
 add wave -noupdate sim:/test/UUT/etat
 
-#simulation de 1us 
-run 400 ns
+#simulation de 190 ns
+run 190 ns
