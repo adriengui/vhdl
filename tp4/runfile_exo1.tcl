@@ -19,5 +19,5 @@ add wave -noupdate -radix unsigned -radixshowbase 0 sim:/test/G
 #add wave -noupdate sim:/test/Cout
 add wave -position end  sim:/test/Cout
 
-#simulation de 190 ns
+#simulation de 200 ns
 run 200 ns
