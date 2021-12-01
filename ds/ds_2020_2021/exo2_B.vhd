@@ -11,8 +11,7 @@ end operateur;
 
 architecture dataflow of operateur is
 
-signal yi:std_logic_vector(n-1 downto 0);
-signal c:std_logic_vector(n-1 downto 0);
+signal c,yi:std_logic_vector(n-1 downto 0);
 
 component fulladd is
 port(x,y,cin:std_logic;
