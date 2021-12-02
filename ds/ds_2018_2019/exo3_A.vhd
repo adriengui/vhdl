@@ -9,7 +9,7 @@ end cell;
 
 architecture dflow of cell is
 begin
-so<=si or (ei and ai and not bi);
-io<=ii or (ei and bi and not ai);
-eo<=ei and not(ai xor bi);
+	so<=si or (ei and ai and not bi);
+	io<=ii or (ei and bi and not ai);
+	eo<=ei and not(ai xor bi);
 end dflow;
