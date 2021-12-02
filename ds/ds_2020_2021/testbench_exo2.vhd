@@ -6,6 +6,7 @@ entity test is
 end test;
 
 architecture bench of test is
+
 component operateur is
 generic(n:natural);
 port(x,y:std_logic_vector(n-1 downto 0);

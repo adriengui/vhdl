@@ -6,6 +6,7 @@ entity test is
 end test;
 
 architecture bench of test is
+
 component recepteur is
 port(rst,rxd,h:std_logic;
 	rxrdy,p:out std_logic;
@@ -17,7 +18,7 @@ signal di:std_logic_vector(7 downto 0):="00000000";
 
 begin
 	UUT:recepteur port map (rst,rxd,h,rxrdy,p,di);
-	h<=not h after 5 ns;
+	h<=not h after 15 ns;
 	rxd<='1' after 12 ns, '0' after 62 ns, '1' after 91 ns, '0' after 153 ns, '1' after 302 ns, '0' after 374 ns;
 end bench;
 
