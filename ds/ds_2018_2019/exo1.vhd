@@ -16,7 +16,7 @@ begin
 			if inc='0' and raz='1' then
 				s:=0;
 			elsif inc='1' and raz='0' then
-				s:=s+1;
+				s:=(s+1) mod 1000;
 			end if;
 		end if;
 		q<=s;
