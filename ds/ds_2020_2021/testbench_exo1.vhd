@@ -19,6 +19,6 @@ signal di:std_logic_vector(7 downto 0):="00000000";
 begin
 	UUT:recepteur port map (rst,rxd,h,rxrdy,p,di);
 	h<=not h after 15 ns;
-	rxd<='1' after 12 ns, '0' after 62 ns, '1' after 91 ns, '0' after 153 ns, '1' after 302 ns, '0' after 374 ns;
+	rxd<='1' after 25 ns, '0' after 153 ns, '1' after 202 ns, '0' after 784 ns;
 end bench;
 
