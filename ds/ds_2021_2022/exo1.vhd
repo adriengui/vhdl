@@ -12,7 +12,7 @@ end diviseur;
 architecture dflow of diviseur is
 signal i:unsigned(3 downto 0):="0000";
 begin
-hd<=to_bit(i(v));
-i<=(i+1) mod 16 when h'event and h='1' else "0000" when rst='1';
+	hd<=to_bit(i(v));
+	i<=(i+1) mod 16 when h'event and h='1' else "0000" when rst='1';
 end dflow;
 
