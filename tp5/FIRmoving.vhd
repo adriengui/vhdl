@@ -1,4 +1,4 @@
--- Fuck tous les pd qui sucent ce Drive
+-- Fuck toutes les beaches qui sucent ce Drive
 
 library ieee;
 use ieee.std_logic_1164.all;
