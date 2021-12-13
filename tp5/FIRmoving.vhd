@@ -1,4 +1,4 @@
--- Fuck tout les pd qui sucent ce Drive
+-- Fuck tous les pd qui sucent ce Drive
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -6,15 +6,15 @@ use ieee.std_logic_unsigned.all;
 
 entity FIRmoving8 is
 generic(N:natural);
-port(x:real;
+port(x:real;	
 	y:out real;
 	rst,h:std_logic);
 end FIRmoving8;
 
 architecture dataflow of FIRmoving8 is
 
-signal x1,x2,x3,x4,x5,x6,x7:real:=0.0;
-constant b:real:=0.125;
+signal x1,x2,x3,x4,x5,x6,x7:real:=0.0;	-- Signaux intermédiaires
+constant b:real:=0.125;	 -- Représente la moyenne = 1/8 = 0.125
 
 begin
 
