@@ -9,7 +9,7 @@ entity test is
 end test;
 
 architecture bench of test is
-	-- On recopie l'entité du composant générique
+	-- On recopie l'entitÃ© du composant gÃ©nÃ©rique
 	component FIRgenerique is
 		generic(N:natural);
 		port(x:real;
@@ -18,23 +18,23 @@ architecture bench of test is
 	end component;
 
 	constant Ndata:natural:=6144; -- Longueur du fichier
-					-- des données d'entrée
-	constant Fe:time:=400 ns; -- Fréquence d'échantillonnage
-	signal x,y:real:=0.0; -- Signaux d'entrée/sortie
+					-- des donnÃ©es d'entrÃ©e
+	constant Fe:time:=40 ns; -- FrÃ©quence d'Ã©chantillonnage
+	signal x,y:real:=0.0; -- Signaux d'entrÃ©e/sortie
 	signal rst,h,he:std_logic:='0';
 	signal fin:boolean:=false;
-	signal x_data:defmem(0 to Ndata-1); -- Tableau qui va contenir les données d'entrée
+	signal x_data:defmem(0 to Ndata-1); -- Tableau qui va contenir les donnÃ©es d'entrÃ©e
 	file resultat:text open write_mode is "resultat.dat"; -- Fichier dans lequel on
-								-- écrit les résultats
+								-- Ã©crit les rÃ©sultats
 
 	begin
 		UUT:FIRgenerique generic map(N=>256) port map(x=>x,y=>y,rst=>rst,h=>h);
-		h<=not h after 20 ns;
-		he<=not he after 350 ns;
+		h<=not h after 80 ns;
+		he<=not he after Fe/2;
 		rst<='1';
-		x_data<=initmem("signal.txt",Ndata); -- Lecture des données
+		x_data<=initmem("signal.txt",Ndata); -- Lecture des donnÃ©es
 
-		process(he) -- Process qui lit les données à la Fe
+		process(he) -- Process qui lit les donnÃ©es Ã  la Fe
 			variable i:natural:=0;
 			begin
 				if he'event and he='1' then
@@ -47,7 +47,7 @@ architecture bench of test is
 				end if;
 		end process;
 
-		process(h) -- Process qui écrit le fichier résultat
+		process(h) -- Process qui Ã©crit le fichier rÃ©sultat
 			variable l:line;
 			begin
 				if h'event and h='1' then
